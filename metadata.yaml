@@ -7,7 +7,7 @@ desc: >-
   聊天时按语义相似度挑选最贴题的一张，不相关就一张都不发。
 version: 1.0.0
 author: 连逸晨
-repo: ""
+repo: "https://github.com/Piperazine/astrbot_plugin_sticker_memory"
 astrbot_version: ">=4.24.0"
 category: 娱乐
 tags:
