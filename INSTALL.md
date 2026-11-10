@@ -23,7 +23,7 @@
 
 ### 方式 A：面板上传 zip
 
-1. AstrBot 面板 → 插件 → 从文件安装 → 选 `astrbot_plugin_sticker_memory.zip`
+1. AstrBot 面板 → 插件 → 从文件安装 → 选 `astrbot_plugin_meme_memory.zip`
 2. 启用插件
 3. 重载插件（或重启 AstrBot）
 
@@ -32,8 +32,8 @@
 ```bash
 # 在服务器上
 cd /opt/astrbot/instance/data/plugins/
-# 解压后目录名必须是 astrbot_plugin_sticker_memory
-unzip astrbot_plugin_sticker_memory.zip
+# 解压后目录名必须是 astrbot_plugin_meme_memory
+unzip astrbot_plugin_meme_memory.zip
 # 然后重载插件或重启 AstrBot
 ```
 
@@ -60,7 +60,7 @@ unzip astrbot_plugin_sticker_memory.zip
 
 ```bash
 # 1. 先停掉插件（面板禁用，或直接删目录后重载）
-rm -rf /opt/astrbot/instance/data/plugins/astrbot_plugin_sticker_memory
+rm -rf /opt/astrbot/instance/data/plugins/astrbot_plugin_meme_memory
 
 # 2. 删掉它存的数据（图 + 数据库）
 rm -rf /opt/astrbot/instance/data/plugin_data/sticker_memory
@@ -94,7 +94,7 @@ tar czf sticker-memory-backup-$(date +%Y%m%d).tgz \
 不需要 AstrBot、不需要 QQ、不需要联网：
 
 ```bash
-cd astrbot_plugin_sticker_memory
+cd astrbot_plugin_meme_memory
 python tests/run_tests.py     # 衰减 / 判定 / 存储，32 项
 python tests/test_import.py   # 用假 AstrBot 包冒烟，7 项
 ```

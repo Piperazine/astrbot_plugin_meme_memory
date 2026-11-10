@@ -1,4 +1,4 @@
-name: astrbot_plugin_sticker_memory
+name: astrbot_plugin_meme_memory
 display_name: 表情记忆
 short_desc: 会收藏、会淡忘、会按语境配图的表情包记忆系统
 desc: >-
@@ -6,8 +6,8 @@ desc: >-
   按半衰期自然衰减（久不用的会遗忘，再出现能复活），
   聊天时按语义相似度挑选最贴题的一张，不相关就一张都不发。
 version: 1.0.0
-author: 连逸晨
-repo: "https://github.com/Piperazine/astrbot_plugin_sticker_memory"
+author: Piperazine
+repo: "https://github.com/Piperazine/astrbot_plugin_meme_memory"
 astrbot_version: ">=4.24.0"
 category: 娱乐
 tags:

@@ -39,7 +39,7 @@ except ImportError:  # 平铺加载时
     from context import ContextBuffer, render_for_prompt
     from store import StickerStore, VlmCache
 
-PLUGIN_NAME = "astrbot_plugin_sticker_memory"
+PLUGIN_NAME = "astrbot_plugin_meme_memory"
 
 DEFAULTS = {
     "enabled": True,
@@ -77,7 +77,7 @@ DEFAULTS = {
 }
 
 
-@register(PLUGIN_NAME, "连逸晨", "给表情包加上记忆：会收藏、会淡忘、会按语境配图", "1.0.0")
+@register(PLUGIN_NAME, "Piperazine", "给表情包加上记忆：会收藏、会淡忘、会按语境配图", "1.0.0")
 class StickerMemory(Star):
     def __init__(self, context: Context, config: dict | None = None):
         super().__init__(context)

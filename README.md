@@ -1,4 +1,4 @@
-# 表情记忆（astrbot_plugin_sticker_memory）
+# 表情记忆（astrbot_plugin_meme_memory）
 
 给 AstrBot 的表情包加一层**记忆**：会收藏、会理解、会淡忘，聊到合适的时候自己配一张。
 
@@ -81,14 +81,14 @@
 
 ### 方式一：面板上传
 
-AstrBot 面板 → 插件 → 从文件安装 → 选 `astrbot_plugin_sticker_memory.zip` → 启用 → 重载。
+AstrBot 面板 → 插件 → 从文件安装 → 选 `astrbot_plugin_meme_memory.zip` → 启用 → 重载。
 
 ### 方式二：手动
 
 ```bash
 cd /opt/astrbot/instance/data/plugins/
-unzip astrbot_plugin_sticker_memory.zip
-# 目录名必须是 astrbot_plugin_sticker_memory
+unzip astrbot_plugin_meme_memory.zip
+# 目录名必须是 astrbot_plugin_meme_memory
 ```
 
 ### 依赖
@@ -166,7 +166,7 @@ unzip astrbot_plugin_sticker_memory.zip
 彻底删除：
 
 ```bash
-rm -rf data/plugins/astrbot_plugin_sticker_memory
+rm -rf data/plugins/astrbot_plugin_meme_memory
 rm -rf data/plugin_data/sticker_memory
 systemctl restart astrbot
 ```
