@@ -1,0 +1,200 @@
+{
+  "enabled": {
+    "description": "总开关",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后既不收集也不配图，已有数据保留。"
+  },
+  "collect_from_all": {
+    "description": "收集所有人的图（关闭则只收主人）",
+    "type": "bool",
+    "default": true,
+    "hint": "群里活跃人数少的话开着更划算；但会存下别人发的图。"
+  },
+  "vlm_enabled": {
+    "description": "用视觉模型做表情包判定",
+    "type": "bool",
+    "default": true,
+    "hint": "只在图片特征拿不准时调用；同一张图只问一次（有缓存）。关掉后只靠图片特征，会漏一些。"
+  },
+  "vlm_provider_id": {
+    "description": "视觉模型 Provider ID",
+    "type": "string",
+    "default": "",
+    "hint": "留空则使用当前默认 Provider。需支持读图。"
+  },
+  "half_life_days": {
+    "description": "记忆半衰期（天）",
+    "type": "float",
+    "default": 3.0,
+    "hint": "多少天不用就衰减一半。3 天意味着两周不碰就基本被遗忘。"
+  },
+  "max_stickers": {
+    "description": "表情库容量上限",
+    "type": "int",
+    "default": 100,
+    "hint": "超过后优先淘汰强度最低、最久没出现的。被淘汰的进墓碑，文件保留可复活。"
+  },
+  "observe_hours": {
+    "description": "新图观察期（小时）",
+    "type": "float",
+    "default": 6.0,
+    "hint": "刚收藏的图在这段时间内不会被主动发出，避免刚收到就回一张。"
+  },
+  "active_threshold": {
+    "description": "活跃阈值",
+    "type": "float",
+    "default": 0.35,
+    "hint": "强度高于此值才算活跃，才可能被主动发出。"
+  },
+  "forget_threshold": {
+    "description": "遗忘阈值",
+    "type": "float",
+    "default": 0.08,
+    "hint": "强度低于此值并持续 3 天后进入遗忘；文件还在，30 天后才物理删除。"
+  },
+  "reinforce_seen": {
+    "description": "再次看到同一张图的强化值",
+    "type": "float",
+    "default": 0.35,
+    "hint": "你或群友又发了这张图，说明它还有用。"
+  },
+  "reinforce_used": {
+    "description": "被使用时的强化值",
+    "type": "float",
+    "default": 0.25,
+    "hint": "她真的把这张图发出去时加的分。"
+  },
+  "proactive_enabled": {
+    "description": "允许主动配图",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后会按语境在回复后追加一张表情包；受额度与冷却限制。"
+  },
+  "proactive_probability_base": {
+    "description": "配图基础概率",
+    "type": "float",
+    "default": 0.25,
+    "hint": "实际概率 = 此值 × (强度 / 2.5)，强度满时约等于此值。"
+  },
+  "proactive_daily_limit": {
+    "description": "每日配图上限",
+    "type": "int",
+    "default": 5,
+    "hint": "防止刷屏，也影响风控观感。"
+  },
+  "same_sticker_cooldown_hours": {
+    "description": "同一张图冷却（小时）",
+    "type": "int",
+    "default": 24,
+    "hint": "同一张表情包在多少小时内不重复发。"
+  },
+  "session_cooldown_minutes": {
+    "description": "同一会话配图间隔（分钟）",
+    "type": "int",
+    "default": 10,
+    "hint": "同一个群/私聊里，两次配图至少隔多久。"
+  },
+  "daily_collect_limit": {
+    "description": "每日新收藏上限",
+    "type": "int",
+    "default": 120,
+    "hint": "防止有人刷图把你服务器刷满、把视觉模型额度刷爆。"
+  },
+  "purge_retention_days": {
+    "description": "遗忘后保留文件（天）",
+    "type": "int",
+    "default": 30,
+    "hint": "真正删图前的缓冲期；删的是文件，墓碑记录保留。"
+  },
+  "analysis_enabled": {
+    "description": "让视觉模型理解每张图",
+    "type": "bool",
+    "default": true,
+    "hint": "入库后调一次视觉模型，生成画面描述、图上文字和语境标签。关掉就没有语义，只能按强度随机配图。"
+  },
+  "analysis_daily_limit": {
+    "description": "每日分析上限",
+    "type": "int",
+    "default": 60,
+    "hint": "每天最多调多少次视觉模型，防止刷图刷爆额度。"
+  },
+  "analysis_max_frames": {
+    "description": "动图抽帧数",
+    "type": "int",
+    "default": 3,
+    "hint": "GIF/动图抽几帧拼成一张再送模型。1 帧可能看不出梗，3 帧基本够。"
+  },
+  "context_window_seconds": {
+    "description": "语境时间窗（秒）",
+    "type": "int",
+    "default": 180,
+    "hint": "只取发图前这么多秒内的同一个人消息作为语境。"
+  },
+  "context_before": {
+    "description": "取几条本人前文",
+    "type": "int",
+    "default": 2,
+    "hint": "同一发送者最近几条消息作为语境。别人的消息只作弱参考，不主导。"
+  },
+  "reanalyze_on_seen": {
+    "description": "重复出现时重新理解",
+    "type": "bool",
+    "default": true,
+    "hint": "同一张图在不同语境再次出现时，用新语境再分析一次，标签按出现次数累加。"
+  },
+  "retrieval_enabled": {
+    "description": "按语义挑图",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后会用即将回复的那句话做向量检索，挑最相关的图；关掉就退回按强度随机。"
+  },
+  "retrieval_min_similarity": {
+    "description": "最低相似度",
+    "type": "float",
+    "default": 0.35,
+    "hint": "低于这个相似度的图一律不发。调高更保守，调低更爱发。"
+  },
+  "retrieval_top_k": {
+    "description": "候选数量",
+    "type": "int",
+    "default": 5,
+    "hint": "检索取前几名再随机挑一个，避免每次都是同一张。"
+  },
+  "strength_weight": {
+    "description": "强度权重",
+    "type": "float",
+    "default": 0.3,
+    "hint": "最终分 = 相似度乘 0.7 + 强度乘 0.3。调大更偏向常用的图。"
+  },
+  "embedding_provider_id": {
+    "description": "嵌入模型 Provider",
+    "type": "string",
+    "default": "siliconflow/bge-m3",
+    "hint": "用于把描述和对话转成向量，默认 bge-m3。"
+  },
+  "retrieval_strict": {
+    "description": "没有合适图就不发",
+    "type": "bool",
+    "default": true,
+    "hint": "开启时语义不匹配就一张都不发；关掉会退回随机，可能牛头不对马嘴。"
+  },
+  "bridge_enabled": {
+    "description": "与梗百科联动",
+    "type": "bool",
+    "default": true,
+    "hint": "装了梗百科时，命中梗之后按情绪标签给候选图加权；没装则自动跳过。"
+  },
+  "bridge_max_age_seconds": {
+    "description": "联动信号有效期（秒）",
+    "type": "int",
+    "default": 120,
+    "hint": "梗百科的命中只在这个时间窗内影响挑图，避免旧信号干扰。"
+  },
+  "meme_tag_boost": {
+    "description": "梗标签加权",
+    "type": "float",
+    "default": 0.15,
+    "hint": "表情标签与梗标签完全重合时加多少分。调大更容易选到同情绪的图。"
+  }
+}

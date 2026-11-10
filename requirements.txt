@@ -1,0 +1,3 @@
+# 本插件零额外依赖。
+# sqlite3 / hashlib / json 是 Python 标准库，Pillow 由 AstrBot 自带。
+# 这个文件存在只是为了显式说明，不安装任何东西。

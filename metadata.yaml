@@ -1,0 +1,23 @@
+name: astrbot_plugin_sticker_memory
+display_name: 表情记忆
+short_desc: 会收藏、会淡忘、会按语境配图的表情包记忆系统
+desc: >-
+  给表情包加一层记忆：自动判定并收藏聊天里的表情包，用视觉模型理解画面与语境，
+  按半衰期自然衰减（久不用的会遗忘，再出现能复活），
+  聊天时按语义相似度挑选最贴题的一张，不相关就一张都不发。
+version: 1.0.0
+author: 连逸晨
+repo: ""
+astrbot_version: ">=4.24.0"
+category: 娱乐
+tags:
+  - 表情包
+  - 图片
+  - 记忆衰减
+  - 语义检索
+help: |
+  /表情库        查看总数、各状态数量、今日收发
+  /表情库清理    管理员手动推进一次衰减
+
+  重要：本插件会调用视觉模型理解新收到的表情包（每张一次，受 analysis_daily_limit 限制）。
+  不想花钱可在配置里关闭 analysis_enabled，但那样只能按强度随机配图。
