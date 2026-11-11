@@ -1,9 +1,33 @@
 # 表情记忆（astrbot_plugin_meme_memory）
 
+[![AstrBot](https://img.shields.io/badge/AstrBot-%3E%3D4.24.0-4B8BBE)](https://github.com/AstrBotDevs/AstrBot)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3DA639)](LICENSE)
+[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](requirements.txt)
+
 给 AstrBot 的表情包加一层**记忆**：会收藏、会理解、会淡忘，聊到合适的时候自己配一张。
 
 市面上大多数表情包插件是"库"——只进不出，靠手动清理或固定容量（常见 20–30 张）卡住。
 这个插件把**时间**当变量：每张图有强度，不用就衰减，久到一定程度被遗忘，再出现还能复活。
+
+## 快速开始
+
+**方式一 · 插件市场（推荐）**
+
+AstrBot 面板 → 插件 → 插件市场 → 搜「**表情记忆**」→ 安装 → 启用 → 重载。
+
+**方式二 · 仓库地址安装**
+
+AstrBot 面板 → 插件 → 从链接安装，填入：
+
+```
+https://github.com/Piperazine/astrbot_plugin_meme_memory
+```
+
+> **零额外依赖**：只用 Python 标准库 + AstrBot 自带的 Pillow，装完不需要 `pip install` 任何东西。
+> 详细步骤、配置项说明与回滚方法见 [INSTALL.md](INSTALL.md)。
+
+<!-- 效果图放在这里：建议放一张「收到表情包 → 表情库多一张 → 聊天时自动配图」的对比截图或 GIF。
+     放好后把这个注释删掉，换成 ![效果](docs/preview.gif) -->
 
 ---
 
