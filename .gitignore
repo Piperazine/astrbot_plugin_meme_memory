@@ -10,3 +10,6 @@ data/stickers.db
 .env.*
 !.env.example
 *.log
+
+# 运行时数据（插件不可写 plugin_data 时的兜底目录）
+data/
